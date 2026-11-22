@@ -2,6 +2,8 @@ backend:
   name: github
   repo: win2099/my-catalog
   branch: main
+  base_url: https://my-catalog.aettfda68.workers.dev
+  auth_endpoint: auth
 
 media_folder: "images"
 public_folder: "/images"
@@ -11,10 +13,10 @@ collections:
     label: "卡片列表"
     folder: "content/cards"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "编号", name: "number", widget: "string" }
-      - { label: "重点", name: "highlight", widget: "string" }
+      - { label: "编号", name: "number", widget: "string", required: true }
+      - { label: "重点", name: "highlight", widget: "string", required: true }
       - { label: "封面图片", name: "image", widget: "image" }
       - { label: "详细描述", name: "body", widget: "text" }
-      - { label: "排序", name: "order", widget: "number", default: 0 }
+      - { label: "排序", name: "order", widget: "number", default: 100 }
