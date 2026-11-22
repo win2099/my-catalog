@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: win2099/my-catalog
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "cards"
+    label: "卡片列表"
+    folder: "content/cards"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "编号", name: "number", widget: "string" }
+      - { label: "重点", name: "highlight", widget: "string" }
+      - { label: "封面图片", name: "image", widget: "image" }
+      - { label: "详细描述", name: "body", widget: "text" }
+      - { label: "排序", name: "order", widget: "number", default: 0 }
